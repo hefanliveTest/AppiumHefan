@@ -5,7 +5,7 @@
     <classes>
       <class name="com.appium.hefanlive.TestCase">
         <methods>
-          <include name="testcase"/>
+          <include name="start"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.appium.hefanlive.TestCase -->

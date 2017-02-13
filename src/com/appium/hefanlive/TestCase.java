@@ -115,7 +115,7 @@ public class TestCase {
 		
 		for (int i = 1; i <= 30; i++) {
 			
-			if(testcase15(i,a)==0)
+			if(testcase_step(i,a)==0)
 			{break;}
 
 			/*
@@ -144,7 +144,7 @@ public class TestCase {
 	}
 	
 	@Test(groups={"step"})
-	public int testcase15(int i,AppLibs a){
+	public int testcase_step(int i,AppLibs a){
 		System.out.println("for start i=" + i);
 		if (Xlsfile.isempty("hefanlive_testcase", 1, i)) {
 			return 0;
