@@ -28,25 +28,26 @@ public class TestCase {
 	public void setUp() throws Exception {
 		// set up appium
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-
 		
 		File classpathRoot = new File(System.getProperty("user.dir"));
 		File appDir = new File(classpathRoot, "apps");
 		File app = new File(appDir, "hefanlive.apk");
 		
-		capabilities.setCapability("noReset", true);//²»ÖØÖÃapp×´Ì¬
-		capabilities.setCapability("autoLaunch", false);//²»Ã¿´ÎÆô¶¯app
-		capabilities.setCapability("app", app.getAbsolutePath());
+		capabilities.setCapability("noReset", true);//ä¸é‡ç½®appçŠ¶æ€
+		capabilities.setCapability("autoLaunch", false);//ä¸æ¯æ¬¡å¯åŠ¨app
+		//capabilities.setCapability("app", app.getAbsolutePath());
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("deviceName", "Android Emulator");
-		capabilities.setCapability("platformVersion", "6.0");
+		capabilities.setCapability("platformVersion", "5.1.1");
 		capabilities.setCapability("appPackage", "com.starunion.hefantv");
 		capabilities.setCapability("appActivity", "com.sagacreate.boxlunch.activity.SplashActivity");
 		//capabilities.setCapability("waitActivity", ".GuideActivity");
 		capabilities.setCapability("unicodeKeyboard", "True");
 		capabilities.setCapability("resetKeyboard", "True");
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),
+		//driver = new AndroidDriver(new URL("http://192.168.1.200:4723/wd/hub"),
+		
 				capabilities);
 		driver.launchApp();
 	}
@@ -59,7 +60,7 @@ public class TestCase {
 		// driver.quit();
 	}
 
-	@Test
+	@Test(groups={"all"})
 	public void start() {
 		System.out.println("start!!!!");
 		for (int j = 1; j <= 3; j++) {
@@ -141,7 +142,8 @@ public class TestCase {
 		driver.pinch(200, 500);
 
 	}
-	//@Test
+	
+	@Test(groups={"step"})
 	public int testcase15(int i,AppLibs a){
 		System.out.println("for start i=" + i);
 		if (Xlsfile.isempty("hefanlive_testcase", 1, i)) {

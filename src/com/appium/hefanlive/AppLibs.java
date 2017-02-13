@@ -87,7 +87,7 @@ public void execute(AndroidDriver driver,WebElement element,String exemethod,Str
 	}
 }
 
-//»¬¶¯º¯Êı
+//æ»‘åŠ¨å‡½æ•°
 public void swipefuc(AndroidDriver driver,String value){
 	try{
 		Thread.sleep(3000);
@@ -108,10 +108,10 @@ public void sleepThread(String sleeptime){
 	}
 }
 
-//µã»÷Ä³×ø±êº¯Êı
+//ç‚¹å‡»æŸåæ ‡å‡½æ•°
 public void tapfun(AndroidDriver driver){
 try{
-	//driver.tap(1, 1000, 1200, 3000);//¸Ã·½·¨ÔÚĞÂ°æappiumÖĞ¾­³£±¨´í
+	//driver.tap(1, 1000, 1200, 3000);//è¯¥æ–¹æ³•åœ¨æ–°ç‰ˆappiumä¸­ç»å¸¸æŠ¥é”™
 	TouchAction action = new TouchAction(driver);
 	action.tap(1000,1200).perform();
 	
@@ -142,7 +142,7 @@ public String checktextold(AndroidDriver driver,String localstyle,String localva
 	Assert.assertTrue(check_elements.get(i).getAttribute("text").contains(checkname));
 	System.out.println("The text is "+check_elements.get(i).getAttribute("text"));
 	}
-	return check_elements.get(i-1).getAttribute("text");//·µ»Ø×îºóÒ»Ìõ
+	return check_elements.get(i-1).getAttribute("text");//è¿”å›æœ€åä¸€æ¡
 }
 */
 

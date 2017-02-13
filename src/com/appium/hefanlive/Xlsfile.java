@@ -13,10 +13,14 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 public class Xlsfile {
-
+	File classpathRoot = new File(System.getProperty("user.dir"));
+	File appDir = new File(classpathRoot, "testcase");
+	File f=new File(appDir, "testcase.xls");
 	public static String readxls(String sheetname,int x,int y){
-		File f=new File("E:"+File.separator+"ldtest.xls");
-		
+		//File f=new File("E:"+File.separator+"ldtest.xls");
+		File classpathRoot = new File(System.getProperty("user.dir"));
+		File appDir = new File(classpathRoot, "testcase");
+		File f=new File(appDir, "testcase.xls");
 		String cellname=null;
 			try {
 				Workbook book=Workbook.getWorkbook(f);
@@ -36,8 +40,11 @@ public class Xlsfile {
 	}
 	
 	public static boolean isempty(String sheetname,int x,int y){
-		File f=new File("E:"+File.separator+"ldtest.xls");
-		//²âÊÔÓÃÀý´æ·ÅÄ¿Â¼
+		//File f=new File("E:"+File.separator+"ldtest.xls");
+		File classpathRoot = new File(System.getProperty("user.dir"));
+		File appDir = new File(classpathRoot, "testcase");
+		File f=new File(appDir, "testcase.xls");
+		//æµ‹è¯•ç”¨ä¾‹å­˜æ”¾ç›®å½•
 		boolean result=true;
 			try {
 				Workbook book=Workbook.getWorkbook(f);//
@@ -60,7 +67,11 @@ public class Xlsfile {
 		int i=1;
 		try{
 			
-			File f=new File("E:"+File.separator+"ldtest.xls");
+			//File f=new File("E:"+File.separator+"ldtest.xls");
+			File classpathRoot = new File(System.getProperty("user.dir"));
+			File appDir = new File(classpathRoot, "testcase");
+			File f=new File(appDir, "testcase.xls");
+			
 			for(;i>0;i++)
 			{
 				Workbook book=Workbook.getWorkbook(f);//
@@ -78,14 +89,17 @@ public class Xlsfile {
 		catch(Exception e){
 			System.out.println(e);
 	}
-		return i;//????????????????
+		return i;//ï¿½ï¿½ï¿½Ø¹Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	public static void writexls(String sheetname,int x,int y,String value){
 		try{
+			File classpathRoot = new File(System.getProperty("user.dir"));
+			File appDir = new File(classpathRoot, "testcase");
+			File f=new File(appDir, "testcase.xls");
 
-			Workbook wb=Workbook.getWorkbook(new File("e:\\ldtest.xls"));
-			WritableWorkbook book=Workbook.createWorkbook(new File("e:\\ldtest.xls"),wb);
+			Workbook wb=Workbook.getWorkbook(f);
+			WritableWorkbook book=Workbook.createWorkbook(f,wb);
 			WritableSheet sheet=book.getSheet(sheetname);
 			sheet.addCell(new Label(x,y,value));
 			book.write();
@@ -96,11 +110,6 @@ public class Xlsfile {
 	}
 	}
 	
-	public static void main(String args[]){
-		//readxls(4,1);
-		//writexls("test",8,1,"success");
-		System.out.println(search("????????????"));
-		
-	}
+
 
 }
