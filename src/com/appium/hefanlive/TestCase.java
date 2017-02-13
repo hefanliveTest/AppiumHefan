@@ -33,8 +33,8 @@ public class TestCase {
 		File appDir = new File(classpathRoot, "apps");
 		File app = new File(appDir, "hefanlive.apk");
 		
-		capabilities.setCapability("noReset", true);//不重置app状态
-		capabilities.setCapability("autoLaunch", false);//不每次启动app
+		capabilities.setCapability("noReset", true);//涓嶉噸缃產pp鐘舵��
+		capabilities.setCapability("autoLaunch", false);//涓嶆瘡娆″惎鍔╝pp
 		//capabilities.setCapability("app", app.getAbsolutePath());
 		capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
 		capabilities.setCapability("platformName", "Android");
@@ -115,7 +115,7 @@ public class TestCase {
 		
 		for (int i = 1; i <= 30; i++) {
 			
-			if(testcase15(i,a)==0)
+			if(testcase2(i,a)==0)
 			{break;}
 
 			/*
@@ -144,7 +144,7 @@ public class TestCase {
 	}
 	
 	@Test(groups={"step"})
-	public int testcase15(int i,AppLibs a){
+	public int testcase2(int i,AppLibs a){
 		System.out.println("for start i=" + i);
 		if (Xlsfile.isempty("hefanlive_testcase", 1, i)) {
 			return 0;
@@ -164,5 +164,5 @@ public class TestCase {
 
 	// }
 	
-
+	//测试提交3
 }
